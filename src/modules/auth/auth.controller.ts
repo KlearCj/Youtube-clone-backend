@@ -2,8 +2,9 @@ import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import omit from "../../helpers/omit";
 import { findUserByEmail } from "../user/user.service";
+import { LoginBody } from "./auth.schema";
 import { signJwt } from "./auth.utils";
-export const loginHandler = async (req: Request, res: Response) => {
+export const loginHandler = async (req: Request<{},{}, LoginBody>, res: Response) => {
   const { email, password } = req.body;
 
   const user = await findUserByEmail(email);
