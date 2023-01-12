@@ -1,6 +1,15 @@
-import { VideoModel } from "./video.model"
+import { Video, VideoModel } from "./video.model"
 
 export const createVideo=({owner}:{owner:string})=>{
 return VideoModel.create({owner});
 
+}
+export const findVideo=(videoId: Video['videoId'])=>{
+return VideoModel.findOne({videoId})
+} 
+
+export const findVideos=()=>{
+return VideoModel.find({
+    published: true
+}).lean();
 }
