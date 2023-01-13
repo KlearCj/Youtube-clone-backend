@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-const JWT_SECRET = process.env.JWT_SECRET || "GATO";
+import { JWT_SECRET } from "../../variables";
 
 export const signJwt = (payload: string | Buffer | object) => {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: "7d" });

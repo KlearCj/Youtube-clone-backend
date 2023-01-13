@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
+import { NAME, PASS } from "../variables";
 import logger from "./logger";
-
-//ARREGLAR VARIABLE DE ENTORNO;
-const NAME = process.env.NAME || "klear"
-const PASS = process.env.PASS || "dEwxEnUpYGREPl8j";
 
 
 const DB_CONNECTION_STRING = `mongodb+srv://${NAME}:${PASS}@cluster0.ka3gq8j.mongodb.net/?retryWrites=true&w=majority`;

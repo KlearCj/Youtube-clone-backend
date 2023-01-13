@@ -4,14 +4,15 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import helmet from "helmet";
 import logger from "./utils/logger";
-import { CORS_ORIGIN } from "./constans";
+import { CORS_ORIGIN } from "./variables";
 import userRoute from './modules/user/user.route'
 import authRoute from './modules/auth/auth.route' 
 import deserializeUser from "./middleware/deserializeUser";
 import videoRoute from './modules/videos/videos.route'
+import { PORT } from "./variables";
 const app = express();
 
-const PORT = process.env.PORT || 3001;
+
 
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser());
