@@ -9,7 +9,7 @@ export const UserCtrl = async (req: Request<{},{},RegisterUserBody>, res: Respon
   try {
     await createUser({ username, email, password });
     return res.status(StatusCodes.CREATED).send("Usuario creado :D");
-  } catch (e) {
+  } catch (e:any) {
     if (e.code === 11000) return res.status(StatusCodes.CONFLICT).send("El usuario ya existe");
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(e.message);
   }
