@@ -21,7 +21,6 @@ const getPath = ({
 };
 
 export const uploadVideoHandler = async (req: Request, res: Response) => {
-  console.log(req);
   const bb = busboy({ headers: req.headers });
 
   const user = res.locals.user;
@@ -118,7 +117,7 @@ const headers= {
     'Accepted-Ranges':`bytes`,
     'Contente_length':contentLength,
     'Content-Type':`video/${video.extension}`,
-    //'Cross-Origin-Resource-Policy': 'cross-origin'
+    'Cross-Origin-Resource-Policy': 'http://localhost:3000/'
 }
 res.writeHead(StatusCodes.PARTIAL_CONTENT,headers)
 

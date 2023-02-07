@@ -26,10 +26,9 @@ app.use(helmet());
 
 app.use(deserializeUser);
 
-//RECORDAR HACER LAS RUTAS BIEN :D
 app.use("/api/users", userRoute)
 app.use("/api/auth", authRoute)
-app.use('/api/video', videoRoute)
+app.use('/api/videos', videoRoute)
 
 
 const server = app.listen(PORT, async () => {
